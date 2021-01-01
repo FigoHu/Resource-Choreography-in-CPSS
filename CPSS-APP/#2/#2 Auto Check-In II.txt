@@ -1,0 +1,82 @@
+{
+  "id": "517513",
+  "properties": {
+    "name": "Auto Check-In II",
+    "documentation": "Once a user arrives at the lab, his/her identity is recognized by the Camera and then the Dingding APP is invoked to help the user punch in. After punching in, the Air Purifier will be turned on to clean the workplace environment."
+  },
+    "action":{
+        "service":[
+            {
+                "id":"sid-7B672B2B-5E89-45A3-A4B0-2A50F3DFC504",
+                "name":"PunchIn",
+                "enactedBy":{
+                    "id":"sid-AA27AF66-3AB8-4A7A-8CA0-9E66A23DDD09",
+                    "name":"Dingding",
+                    "type":"MobileApp"
+                },
+                "type":"CyberAction",
+                "interaction":{
+
+                },
+                "input":{
+                    "userId":"userid"
+                },
+                "output":"",
+                "flow":{
+                    "id":"sid-9A4A0132-8F2F-4E4D-9A15-9E95C8437509",
+                    "to":"sid-6AA685B1-3D23-4457-AD3A-76B78B7C0184",
+                    "condition":""
+                }
+            },
+            {
+                "id":"sid-6AA685B1-3D23-4457-AD3A-76B78B7C0184",
+                "name":"TurnOn",
+                "enactedBy":{
+                    "id":"sid-F6B2E476-EB61-4B77-89D1-63482EE8BDCD",
+                    "name":"AirCleaner",
+                    "type":"Device"
+                },
+                "type":"PhysicalAction",
+                "interaction":{
+
+                },
+                "input":{
+
+                },
+                "output":"",
+                "flow":{
+                    "id":"",
+                    "to":"",
+                    "condition":""
+                }
+            }
+        ],
+        "event":[
+            {
+                "id":"sid-3034D397-25D3-4E36-949B-037E7BAF7BB8",
+                "name":"HumanDetection",
+                "enactedBy":{
+                    "id":"sid-055FB57C-D9A2-4ADB-86DE-006728755787",
+                    "name":"Camera",
+                    "type":"Device"
+                },
+                "type":"DefaultEvent",
+                "input":"",
+                "output":[
+                    "userid"
+                ],
+                "flow":{
+                    "id":"sid-496B66AA-C9BB-42DB-B7C4-45992D157D75",
+                    "to":"sid-7B672B2B-5E89-45A3-A4B0-2A50F3DFC504",
+                    "condition":""
+                }
+            }
+        ]
+    },
+    "gateway":[
+
+    ],
+    "constraint":[
+
+    ]
+}

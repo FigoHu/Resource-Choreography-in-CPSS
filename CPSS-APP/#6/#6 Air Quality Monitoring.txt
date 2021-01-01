@@ -1,0 +1,89 @@
+{
+  "id": "517546",
+  "properties": {
+    "name": "Air Quality Monitoring",
+    "documentation": "The air sensor monitors the air quality of the lab. The air purifier is turned on when the air quality is poor."
+  },
+    "action":{
+        "service":[
+            {
+                "id":"sid-D789A96B-984C-46D0-81EC-E0E8891FB3BA",
+                "name":"GetAirQuality",
+                "enactedBy":{
+                    "id":"sid-489DD706-DF22-4BC9-A513-E03B7DF0EDC1",
+                    "name":"AirSensor",
+                    "type":"Device"
+                },
+                "type":"PhysicalAction",
+                "interaction":{
+
+                },
+                "input":{
+
+                },
+                "output":[
+                    "AQI"
+                ],
+                "flow":{
+                    "id":"sid-22775565-BE04-48BC-9326-F15DFAF12541",
+                    "to":"sid-14D609AA-A7CD-42B9-B113-F492979DEAEC",
+                    "condition":""
+                }
+            },
+            {
+                "id":"sid-750BD08C-FDB4-4AEB-A47E-BE3D0E3FD3C9",
+                "name":"TurnOn",
+                "enactedBy":{
+                    "id":"sid-CA85923C-2050-480D-8A00-29646D259698",
+                    "name":"AirCleaner",
+                    "type":"Device"
+                },
+                "type":"PhysicalAction",
+                "interaction":{
+
+                },
+                "input":{
+
+                },
+                "output":"",
+                "flow":{
+                    "id":"",
+                    "to":"",
+                    "condition":""
+                }
+            }
+        ],
+        "event":[
+
+        ]
+    },
+    "gateway":[
+        {
+            "id":"sid-14D609AA-A7CD-42B9-B113-F492979DEAEC",
+            "name":"ExclusiveGateway0",
+            "type":"fork",
+            "flow":{
+                "id":"",
+                "to":[
+                    {
+                        "id":"",
+                        "condition":[
+                            {
+                                "id":"sid-750BD08C-FDB4-4AEB-A47E-BE3D0E3FD3C9",
+                                "condition":{
+                                    "property":"AQI",
+                                    "condition":"!=",
+                                    "value":"100",
+                                    "combination":""
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "constraint":[
+
+    ]
+}

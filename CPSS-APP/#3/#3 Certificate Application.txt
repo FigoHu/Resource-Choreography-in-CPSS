@@ -1,0 +1,136 @@
+{
+  "id": "517526",
+  "properties": {
+    "name": "Certificate Application",
+    "documentation": "A user applies for a school certificate from eHall. After the application is completed, a worker is asked to pick up the ID card from the user and then to print the certificate using a nearest printer. The worker is asked to send the printed certificate to the user."
+  },
+     "action":{
+        "service":[
+            {
+                "id":"sid-A62F0842-8242-4395-B7C0-B6AD6CD1A51F",
+                "name":"FillingofApplication",
+                "enactedBy":{
+                    "id":"sid-C74BBAF6-D85C-4CD0-9F33-28AF6AACE9FF",
+                    "name":"eHall",
+                    "type":"CloudApp"
+                },
+                "type":"CyberAction",
+                "interaction":{
+
+                },
+                "input":{
+
+                },
+                "output":[
+
+                ],
+                "flow":{
+                    "id":"",
+                    "to":"",
+                    "condition":""
+                }
+            },
+            {
+                "id":"sid-3BB35973-9C24-4FA4-8CDC-544A50D84DB7",
+                "name":"GetItem",
+                "enactedBy":{
+                    "id":"sid-C6059FE4-4EC1-4D50-B48B-83E59B6F01E7",
+                    "name":"worker",
+                    "type":"Worker"
+                },
+                "type":"SocialAction",
+                "interaction":{
+                    "id":"sid-EA28C4D9-88A9-416F-B290-197E0A3E6A1F",
+                    "name":"user",
+                    "type":"User"
+                },
+                "input":{
+
+                },
+                "output":"",
+                "flow":{
+                    "id":"sid-DB92736B-4780-4AC7-AE5C-775AC7E7D8FD",
+                    "to":"sid-37EA07ED-7242-4A69-A9F6-B8FDE3B5F00D",
+                    "condition":""
+                }
+            },
+            {
+                "id":"sid-37EA07ED-7242-4A69-A9F6-B8FDE3B5F00D",
+                "name":"PerformTask",
+                "enactedBy":{
+                    "id":"sid-C6059FE4-4EC1-4D50-B48B-83E59B6F01E7",
+                    "name":"worker",
+                    "type":"Worker"
+                },
+                "type":"SocialAction",
+                "interaction":{
+                    "id":"sid-F06D634D-B9E9-472D-A248-DC8B28F936A7",
+                    "name":"library",
+                    "type":"Room"
+                },
+                "input":{
+                    "task":"print the certification "
+                },
+                "output":[
+
+                ],
+                "flow":{
+                    "id":"sid-5DF49FD7-3111-4E5C-B20A-1E3F1CA52842",
+                    "to":"sid-37C5E6A1-718A-4295-8B89-1029F54650F0",
+                    "condition":""
+                }
+            },
+            {
+                "id":"sid-37C5E6A1-718A-4295-8B89-1029F54650F0",
+                "name":"DeliverItem",
+                "enactedBy":{
+                    "id":"sid-3BE37A01-8510-4628-8A62-9E49AF5480CA",
+                    "name":"worker",
+                    "type":"Worker"
+                },
+                "type":"SocialAction",
+                "interaction":{
+                    "id":"sid-77AE1610-BCBC-4720-81EF-99CB2F078E11",
+                    "name":"user",
+                    "type":"User"
+                },
+                "input":{
+                    "item":"card, certification"
+                },
+                "output":"",
+                "flow":{
+                    "id":"",
+                    "to":"",
+                    "condition":""
+                }
+            }
+        ],
+        "event":[
+            {
+                "id":"sid-3D9A7333-F690-4462-A136-652A94116657",
+                "name":"Notifications",
+                "enactedBy":{
+                    "id":"sid-C74BBAF6-D85C-4CD0-9F33-28AF6AACE9FF",
+                    "name":"eHall",
+                    "type":"CloudApp"
+                },
+                "type":"DefaultEvent",
+                "input":"",
+                "output":[
+                    "content"
+                ],
+                "flow":{
+                    "id":"sid-B76AF328-1F4D-4808-9FCF-66C7E1097615",
+                    "to":"sid-3BB35973-9C24-4FA4-8CDC-544A50D84DB7",
+                    "condition":""
+                }
+            }
+        ]
+    },
+    "gateway":[
+
+    ],
+    "constraint":[
+
+    ]
+}

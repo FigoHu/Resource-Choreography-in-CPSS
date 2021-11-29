@@ -13,7 +13,7 @@
         "type": "SocialAction",
         "interaction": {
           "id": "sid-A1F065C5-1A91-4875-A8E2-7B0C6D2C3809",
-          "name": "快递柜1",
+          "name": "cabinet1",
           "type": "Room"
         },
         "input": {
@@ -37,7 +37,7 @@
         "type": "SocialAction",
         "interaction": {
           "id": "sid-037776F5-ACF3-4E7A-9C0C-760DF794D82C",
-          "name": "实验室",
+          "name": "lab",
           "type": "Room"
         },
         "input": {
@@ -55,14 +55,14 @@
         "name": "SendMsg",
         "enactedBy": {
           "id": "sid-4BAEE26F-B165-4E23-9707-BD891B627A68",
-          "name": "Message",
+          "name": "SMS",
           "type": "CloudApp"
         },
         "type": "CyberAction",
         "interaction": {},
         "input": {
           "sendto": "10",
-          "text": "快递帮你取好了"
+          "text": "task completed!"
         },
         "output": "",
         "flow": {
@@ -78,7 +78,7 @@
         "name": "MsgReceived",
         "enactedBy": {
           "id": "sid-BFFBB942-5BA3-4DED-BB62-0F493830BACA",
-          "name": "Message",
+          "name": "SMS",
           "type": "CloudApp"
         },
         "type": "DefaultEvent",
@@ -97,7 +97,7 @@
   "constraint": [
     {
       "id": "sid-A1F065C5-1A91-4875-A8E2-7B0C6D2C3809",
-      "name": "快递柜1",
+      "name": "cabinet1",
       "type": "Room",
       "entitySpecificProperties": {
         "properties": {
@@ -130,7 +130,7 @@
     },
     {
       "id": "sid-037776F5-ACF3-4E7A-9C0C-760DF794D82C",
-      "name": "实验室",
+      "name": "lab",
       "type": "Room",
       "entitySpecificProperties": {
         "properties": {
@@ -164,7 +164,7 @@
   ],
   "id": "5008",
   "properties": {
-    "name": "package pickup I",
+    "name": "#1 package pickup I",
     "documentation": ""
   },
   "gateway": []

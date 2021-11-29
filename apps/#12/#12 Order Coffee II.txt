@@ -1,0 +1,128 @@
+{
+  "_id": "61a4f9a1c5a883de4105f131",
+  "action": {
+    "service": [
+      {
+        "id": "sid-7C89C84E-44BE-40EF-BDD7-8398280CC362",
+        "name": "MakeOrder",
+        "enactedBy": {
+          "id": "sid-A2B906DD-A6EE-4699-B08F-9EEC6503D76F",
+          "name": "Orders",
+          "type": "CloudApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {},
+        "output": [
+          "orderid",
+          "location",
+          "num"
+        ],
+        "flow": {
+          "id": "sid-E568B692-B93C-4328-B870-739F05A9F23A",
+          "to": "sid-62591DE3-E976-4D83-8D93-2D6097105E8C",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-62591DE3-E976-4D83-8D93-2D6097105E8C",
+        "name": "MakeCoffee",
+        "enactedBy": {
+          "id": "sid-A952E732-DC5B-4F7E-B671-ADD990A15780",
+          "name": "CoffeeMaker",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {
+          "mode": "1",
+          "level": "0",
+          "num": "2",
+          "action": "start"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-D811CFD0-CCA7-4C8D-BB50-8F0059A60711",
+        "name": "GetItem",
+        "enactedBy": {
+          "id": "sid-DE8A1F7F-EC41-4F77-BFE0-3EDD3CBDC99E",
+          "name": "worker1",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-A952E732-DC5B-4F7E-B671-ADD990A15780",
+          "name": "CoffeeMaker",
+          "type": "Device"
+        },
+        "input": {
+          "item": "coffee"
+        },
+        "output": "",
+        "flow": {
+          "id": "sid-AA59462E-8795-423E-AA1C-AAFA5FDBBD0F",
+          "to": "sid-92994A83-9BA5-4DD8-A8C2-0B0BD6532763",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-92994A83-9BA5-4DD8-A8C2-0B0BD6532763",
+        "name": "DeliverItem",
+        "enactedBy": {
+          "id": "sid-DE8A1F7F-EC41-4F77-BFE0-3EDD3CBDC99E",
+          "name": "worker1",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-C608A182-6775-42CB-8DDD-007CFA2E2F6C",
+          "name": "User",
+          "type": "User"
+        },
+        "input": {
+          "item": "coffee"
+        },
+        "output": [],
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-D8247C2C-2324-4F04-91E3-E6B8B82ABC8D",
+        "name": "FinishMakingCoffee",
+        "enactedBy": {
+          "id": "sid-A952E732-DC5B-4F7E-B671-ADD990A15780",
+          "name": "CoffeeMaker",
+          "type": "Device"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "coffeeid"
+        ],
+        "flow": {
+          "id": "sid-93CDB4A5-46E0-4376-A190-6B932773BE01",
+          "to": "sid-D811CFD0-CCA7-4C8D-BB50-8F0059A60711",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [],
+  "id": "7523",
+  "properties": {
+    "name": "#12 Order Coffee II",
+    "documentation": ""
+  },
+  "gateway": []
+}

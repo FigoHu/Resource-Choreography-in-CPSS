@@ -1,0 +1,107 @@
+{
+  "_id": "61a4ec0dc5a883de4105f12e",
+  "action": {
+    "service": [
+      {
+        "id": "sid-EF5E0D25-A10A-4D6D-8CFD-B652438D2D11",
+        "name": "PunchIn",
+        "enactedBy": {
+          "id": "sid-D69EA9DE-4CDE-4598-98B7-90FD3CE69C09",
+          "name": "Dingding",
+          "type": "MobileApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {
+          "userId": "userid"
+        },
+        "output": "",
+        "flow": {
+          "id": "sid-278FB5AB-51CC-4876-BC14-040D5ECDDAFD",
+          "to": "sid-4BF9D4CB-2B67-41B2-9FA2-B613C8901D4C",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-4BF9D4CB-2B67-41B2-9FA2-B613C8901D4C",
+        "name": "TurnOnLight",
+        "enactedBy": {
+          "id": "sid-28801171-E25D-4404-9FDB-E14C4E9E58F3",
+          "name": "Light",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-04C40224-17C0-4D6D-AE19-062F512EE4A2",
+        "name": "HumanDetection",
+        "enactedBy": {
+          "id": "sid-2D953A14-0107-4AB3-AC5D-226316151F8D",
+          "name": "Camera",
+          "type": "Device"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "userid"
+        ],
+        "flow": {
+          "id": "sid-44ADC43F-FA15-46B7-AEF8-DAA288671186",
+          "to": "sid-EF5E0D25-A10A-4D6D-8CFD-B652438D2D11",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [
+    {
+      "id": "sid-22E8D523-D111-4C28-87A5-F2149AB4719E",
+      "name": "Lab",
+      "type": "Room",
+      "entitySpecificProperties": {
+        "properties": {
+          "location": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "2ndFloor_InterdisciplineBuilding2",
+            "entity": "",
+            "rule": ""
+          },
+          "capacity": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "128",
+            "entity": "",
+            "rule": ""
+          },
+          "state": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "on",
+            "entity": "",
+            "rule": ""
+          }
+        }
+      }
+    }
+  ],
+  "id": "5165",
+  "properties": {
+    "name": "#9 Auto Punch-In III",
+    "documentation": ""
+  },
+  "gateway": []
+}

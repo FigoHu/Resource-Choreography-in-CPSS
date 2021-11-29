@@ -1,0 +1,71 @@
+{
+  "_id": "6178f838b4f1cdd63068f596",
+  "action": {
+    "service": [
+      {
+        "id": "sid-1474BC91-076A-45AC-B7C0-CCBBE043938D",
+        "name": "PunchIn",
+        "enactedBy": {
+          "id": "sid-294BA73B-231C-4110-92D9-BDD8F1627F17",
+          "name": "Dingding",
+          "type": "MobileApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": "\"userId\"",
+        "output": "",
+        "flow": {
+          "id": "sid-8F40C43A-2511-41C1-A62F-BA1A9C5A435C",
+          "to": "sid-C2A2C74B-121A-4861-A973-0FD69CDAA860",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-C2A2C74B-121A-4861-A973-0FD69CDAA860",
+        "name": "TurnOnLight",
+        "enactedBy": {
+          "id": "sid-7A8B5663-1C80-4FBA-AC2E-9B3F709CFA57",
+          "name": "Light",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-FF584B7D-F373-4EBE-A8CB-13B09116A047",
+        "name": "HumanDetection",
+        "enactedBy": {
+          "id": "sid-A497CDFD-2A99-4B6E-ADBC-CBC11E7A5CB7",
+          "name": "Camera",
+          "type": "Device"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "userid"
+        ],
+        "flow": {
+          "id": "sid-4DB18ED0-E442-47BD-80DE-39C9D4479C3C",
+          "to": "sid-1474BC91-076A-45AC-B7C0-CCBBE043938D",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [],
+  "id": "5041",
+  "properties": {
+    "name": "#3 Auto Punch-In II",
+    "documentation": ""
+  },
+  "gateway": []
+}

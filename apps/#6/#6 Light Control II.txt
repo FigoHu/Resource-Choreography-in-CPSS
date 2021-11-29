@@ -1,0 +1,53 @@
+{
+  "_id": "61a4e1d5c5a883de4105f129",
+  "action": {
+    "service": [
+      {
+        "id": "sid-CB6FC432-06FC-4787-9D43-4697C32BD06D",
+        "name": "GetDoorState",
+        "enactedBy": {
+          "id": "sid-E3569C0D-66FE-466A-82B7-ADC773F005B6",
+          "name": "DoorSensor",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": [
+          "state"
+        ],
+        "flow": {
+          "id": "sid-D50E88EB-5CA9-414E-BEB0-93075246246D",
+          "to": "sid-69199696-77E2-4FB5-9CD0-EC0C7DCF82DF",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-69199696-77E2-4FB5-9CD0-EC0C7DCF82DF",
+        "name": "TurnOnLight",
+        "enactedBy": {
+          "id": "sid-B80D9B14-3C81-4699-B204-0570C380A824",
+          "name": "Light",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": []
+  },
+  "constraint": [],
+  "id": "5128",
+  "properties": {
+    "name": "#6 Light Control II",
+    "documentation": ""
+  },
+  "gateway": []
+}

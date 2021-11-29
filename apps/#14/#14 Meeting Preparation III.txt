@@ -1,0 +1,135 @@
+{
+  "_id": "61a4fcc7c5a883de4105f133",
+  "action": {
+    "service": [
+      {
+        "id": "sid-D6FF4D73-19EE-4939-B520-8D573BDF6491",
+        "name": "InitiateMeetings",
+        "enactedBy": {
+          "id": "sid-B036C954-689B-41C2-96D5-4A5F17573BAC",
+          "name": "MeetingServiceSystem",
+          "type": "CloudApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {},
+        "output": [
+          "time",
+          "location",
+          "peoplenum",
+          "fileurl"
+        ],
+        "flow": {
+          "id": "sid-604B5B98-46FC-4DEE-BBEF-3837A0A70A5B",
+          "to": "sid-AAFC1667-AB42-496C-857B-0878778243D9",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-03B8AD41-B98E-4209-91E6-4FDD803E641C",
+        "name": "HumanDetection",
+        "enactedBy": {
+          "id": "sid-EDA49F63-AF04-4593-A61F-50B5729E3249",
+          "name": "Camera",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": [
+          "peoplenum"
+        ],
+        "flow": {
+          "id": "sid-CEEF3A95-06C3-41E6-9581-18571CFA51BE",
+          "to": "sid-49FFD924-557C-42B5-9B44-1E5262DF158C",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-49FFD924-557C-42B5-9B44-1E5262DF158C",
+        "name": "PunchIn",
+        "enactedBy": {
+          "id": "sid-7E2ED6FD-416E-40C7-A752-AE464461A8F4",
+          "name": "Dingding",
+          "type": "MobileApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {
+          "userId": "userid"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-AAFC1667-AB42-496C-857B-0878778243D9",
+        "name": "Notification",
+        "enactedBy": {
+          "id": "sid-ED6C7334-A416-42BD-9115-22B5DD075A6F",
+          "name": "MeetingServiceSystem",
+          "type": "CloudApp"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "time",
+          "location",
+          "peoplenum",
+          "fileurl"
+        ],
+        "flow": {
+          "id": "sid-6F7DE80F-1955-49FD-8A05-50981F886AA1",
+          "to": "sid-03B8AD41-B98E-4209-91E6-4FDD803E641C",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [
+    {
+      "id": "sid-87F3B314-63A0-4796-A5F4-3B39A1E1636D",
+      "name": "MeetingRoom",
+      "type": "Room",
+      "entitySpecificProperties": {
+        "properties": {
+          "location": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "InterdisciplineBuilding2",
+            "entity": "",
+            "rule": ""
+          },
+          "capacity": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "",
+            "entity": "",
+            "rule": ""
+          },
+          "state": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "",
+            "entity": "",
+            "rule": ""
+          }
+        }
+      }
+    }
+  ],
+  "id": "7525",
+  "properties": {
+    "name": "#14 Meeting Preparation III",
+    "documentation": ""
+  },
+  "gateway": []
+}

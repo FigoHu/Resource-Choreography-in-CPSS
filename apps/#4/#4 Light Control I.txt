@@ -1,0 +1,53 @@
+{
+  "_id": "61a4def2c5a883de4105f128",
+  "action": {
+    "service": [
+      {
+        "id": "sid-D09A5168-BF99-47B0-B4B3-9A232E535A93",
+        "name": "GetDoorState",
+        "enactedBy": {
+          "id": "sid-0ACFC313-9AEB-4EE0-BA45-280F6E5BBADF",
+          "name": "DoorSensor",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": [
+          "state"
+        ],
+        "flow": {
+          "id": "sid-91C5CDDD-FC21-42C7-8E86-B256378E366E",
+          "to": "sid-49080DA5-A569-4DA3-924D-459C485ED991",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-49080DA5-A569-4DA3-924D-459C485ED991",
+        "name": "TurnOffLight",
+        "enactedBy": {
+          "id": "sid-078974AB-6836-431E-AE42-B22AE9092776",
+          "name": "Light",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": []
+  },
+  "constraint": [],
+  "id": "5057",
+  "properties": {
+    "name": "#4 Light Control I",
+    "documentation": ""
+  },
+  "gateway": []
+}

@@ -1,0 +1,71 @@
+{
+  "_id": "ObjectId(\"6178f5f9b4f1cdd63068f590\")",
+  "action": {
+    "service": [
+      {
+        "id": "sid-3B4953F5-8554-4103-BC8C-D5FCED85BCF4",
+        "name": "PunchIn",
+        "enactedBy": {
+          "id": "sid-763229F7-2701-44C0-BFB5-92DDD9C6D4EE",
+          "name": "Dingding",
+          "type": "MobileApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {},
+        "output": "",
+        "flow": {
+          "id": "sid-AC09C800-911A-47A4-A126-B49CEC027187",
+          "to": "sid-1241E404-AF8C-42A7-97D1-71C1A930E6F9",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-1241E404-AF8C-42A7-97D1-71C1A930E6F9",
+        "name": "TurnOnAirCleaner",
+        "enactedBy": {
+          "id": "sid-8A2BD54F-D037-4AB9-A9C3-023AE26ABCAC",
+          "name": "AirCleaner",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-3D7F8E31-2A8C-47B9-8C4B-7F7369904803",
+        "name": "HumanDetection",
+        "enactedBy": {
+          "id": "sid-5C6EE453-D3EB-45DE-99BD-B8AD3FC307B6",
+          "name": "Camera",
+          "type": "Device"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "userid"
+        ],
+        "flow": {
+          "id": "sid-05519B9C-2620-4CB2-99D4-0CE067882935",
+          "to": "sid-3B4953F5-8554-4103-BC8C-D5FCED85BCF4",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [],
+  "id": "5039",
+  "properties": {
+    "name": "Auto Punch-In I",
+    "documentation": ""
+  },
+  "gateway": []
+}

@@ -1,0 +1,150 @@
+{
+  "_id": "61a4e8a4c5a883de4105f12c",
+  "action": {
+    "service": [
+      {
+        "id": "sid-3081B1CE-D84D-43E5-890C-1A2BDEB8E45B",
+        "name": "GetItem",
+        "enactedBy": {
+          "id": "sid-C37F0661-A180-42B8-A21F-3B74123851CA",
+          "name": "Worker",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-DBE50AD1-3B51-46B5-A891-9F2E8FCD1F1D",
+          "name": "Cabinet",
+          "type": "Room"
+        },
+        "input": {
+          "item": "Selectitem"
+        },
+        "output": "",
+        "flow": {
+          "id": "sid-1594CE71-04F6-4EAE-B091-789BD09C2B58",
+          "to": "sid-EECE33F1-741A-41A9-BCDF-4DFAFAE37E98",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-EECE33F1-741A-41A9-BCDF-4DFAFAE37E98",
+        "name": "DeliverItem",
+        "enactedBy": {
+          "id": "sid-C37F0661-A180-42B8-A21F-3B74123851CA",
+          "name": "Worker",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-8C770DE6-7AA1-44FE-B834-D4469D5EA5BA",
+          "name": "Lab",
+          "type": "Room"
+        },
+        "input": {
+          "item": "Selectitem"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-9EAB95FE-B9BF-4F82-A60D-9EAF0CF70BFF",
+        "name": "MsgReceived",
+        "enactedBy": {
+          "id": "sid-24A6570F-EA96-49E0-AF4C-9117CF82F18D",
+          "name": "SMS",
+          "type": "CloudApp"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "content"
+        ],
+        "flow": {
+          "id": "sid-8D3D8041-CD67-4517-95DE-4214918D851D",
+          "to": "sid-3081B1CE-D84D-43E5-890C-1A2BDEB8E45B",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [
+    {
+      "id": "sid-DBE50AD1-3B51-46B5-A891-9F2E8FCD1F1D",
+      "name": "cabinet",
+      "type": "Room",
+      "entitySpecificProperties": {
+        "properties": {
+          "location": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "FudanUniversityJiangwanCampus",
+            "entity": "",
+            "rule": ""
+          },
+          "capacity": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "",
+            "entity": "",
+            "rule": ""
+          },
+          "state": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "",
+            "entity": "",
+            "rule": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "sid-8C770DE6-7AA1-44FE-B834-D4469D5EA5BA",
+      "name": "Lab",
+      "type": "Room",
+      "entitySpecificProperties": {
+        "properties": {
+          "location": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "2ndFloor_InterdisciplineBuilding2",
+            "entity": "",
+            "rule": ""
+          },
+          "capacity": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "",
+            "entity": "",
+            "rule": ""
+          },
+          "state": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "",
+            "entity": "",
+            "rule": ""
+          }
+        }
+      }
+    }
+  ],
+  "id": "5163",
+  "properties": {
+    "name": "#8 package pickup III",
+    "documentation": ""
+  },
+  "gateway": []
+}

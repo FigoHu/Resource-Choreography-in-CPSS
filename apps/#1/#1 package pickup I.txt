@@ -1,0 +1,171 @@
+{
+  "_id": "ObjectId(\"61a467aac5a883de4105f121\")",
+  "action": {
+    "service": [
+      {
+        "id": "sid-2D97A666-5D2B-4B34-AF64-D3F9562C5F5D",
+        "name": "GetItem",
+        "enactedBy": {
+          "id": "sid-3551D78C-9A9F-4916-BCFE-8728312439BC",
+          "name": "Student1",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-A1F065C5-1A91-4875-A8E2-7B0C6D2C3809",
+          "name": "快递柜1",
+          "type": "Room"
+        },
+        "input": {
+          "item": "file"
+        },
+        "output": "",
+        "flow": {
+          "id": "sid-54236CAF-F97B-4D4E-AC5D-DEEDB74FB206",
+          "to": "sid-993A7A5A-C762-4D65-B716-7A9C23FB2D91",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-993A7A5A-C762-4D65-B716-7A9C23FB2D91",
+        "name": "DeliverItem",
+        "enactedBy": {
+          "id": "sid-3551D78C-9A9F-4916-BCFE-8728312439BC",
+          "name": "Student1",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-037776F5-ACF3-4E7A-9C0C-760DF794D82C",
+          "name": "实验室",
+          "type": "Room"
+        },
+        "input": {
+          "item": "file"
+        },
+        "output": "",
+        "flow": {
+          "id": "sid-45553CB4-8B47-4EBC-921A-F8F51823DBD1",
+          "to": "sid-59AC3CF2-5751-42AA-BCB0-3BBCF396D841",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-59AC3CF2-5751-42AA-BCB0-3BBCF396D841",
+        "name": "SendMsg",
+        "enactedBy": {
+          "id": "sid-4BAEE26F-B165-4E23-9707-BD891B627A68",
+          "name": "Message",
+          "type": "CloudApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {
+          "sendto": "10",
+          "text": "快递帮你取好了"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-7CE9C117-833C-4135-AC5F-BFF1B9C68719",
+        "name": "MsgReceived",
+        "enactedBy": {
+          "id": "sid-BFFBB942-5BA3-4DED-BB62-0F493830BACA",
+          "name": "Message",
+          "type": "CloudApp"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "content"
+        ],
+        "flow": {
+          "id": "sid-34269CB6-66CD-4141-83AF-635633E11711",
+          "to": "sid-2D97A666-5D2B-4B34-AF64-D3F9562C5F5D",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [
+    {
+      "id": "sid-A1F065C5-1A91-4875-A8E2-7B0C6D2C3809",
+      "name": "快递柜1",
+      "type": "Room",
+      "entitySpecificProperties": {
+        "properties": {
+          "location": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "roomD2008_InterdisciplineBuilding2",
+            "entity": "",
+            "rule": ""
+          },
+          "capacity": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "10",
+            "entity": "",
+            "rule": ">="
+          },
+          "state": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "On",
+            "entity": "",
+            "rule": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "sid-037776F5-ACF3-4E7A-9C0C-760DF794D82C",
+      "name": "实验室",
+      "type": "Room",
+      "entitySpecificProperties": {
+        "properties": {
+          "location": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "roomD2008_InterdisciplineBuilding2",
+            "entity": "",
+            "rule": ""
+          },
+          "capacity": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "10",
+            "entity": "",
+            "rule": ""
+          },
+          "state": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "On",
+            "entity": "",
+            "rule": ""
+          }
+        }
+      }
+    }
+  ],
+  "id": "5008",
+  "properties": {
+    "name": "package pickup I",
+    "documentation": ""
+  },
+  "gateway": []
+}

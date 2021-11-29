@@ -1,0 +1,125 @@
+{
+  "_id": "61a4f208c5a883de4105f12f",
+  "action": {
+    "service": [
+      {
+        "id": "sid-776194E0-F4D5-4420-B76A-A42286641474",
+        "name": "MakeOrder",
+        "enactedBy": {
+          "id": "sid-E3802BA5-FF52-4432-B2F5-E54E3D2F7A89",
+          "name": "Orders",
+          "type": "CloudApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {},
+        "output": [
+          "orderid",
+          "location",
+          "num"
+        ],
+        "flow": {
+          "id": "sid-F232B6D8-C61E-41D4-8A4A-15A937538757",
+          "to": "sid-EE9181C5-CDD3-45BA-99C5-19516B16B394",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-EE9181C5-CDD3-45BA-99C5-19516B16B394",
+        "name": "PrintFile",
+        "enactedBy": {
+          "id": "sid-5D03787E-8BB1-4E32-8244-E2BADE47FA1A",
+          "name": "Printer",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {
+          "fileUrl": "orderid"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-66A5EA60-F670-4423-9429-E8BBF28A9F0D",
+        "name": "GetItem",
+        "enactedBy": {
+          "id": "sid-61C9E101-8696-4FBC-BD78-0FD5CCE45D75",
+          "name": "student",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-5D03787E-8BB1-4E32-8244-E2BADE47FA1A",
+          "name": "Printer",
+          "type": "Device"
+        },
+        "input": {
+          "item": "file"
+        },
+        "output": "",
+        "flow": {
+          "id": "sid-C3D71E79-C7C7-478A-BB8D-F74F260FFCC1",
+          "to": "sid-DA3AA09C-82A4-40BC-9C0A-2423F85D2778",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-DA3AA09C-82A4-40BC-9C0A-2423F85D2778",
+        "name": "DeliverItem",
+        "enactedBy": {
+          "id": "sid-61C9E101-8696-4FBC-BD78-0FD5CCE45D75",
+          "name": "student",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-02811391-93C4-4F9B-8BE2-0F769AF66E2F",
+          "name": "MeetRoom",
+          "type": "Room"
+        },
+        "input": {
+          "item": "file"
+        },
+        "output": [],
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-11898B50-AFE3-4548-8A22-A0F39CFD5054",
+        "name": "FinishPrintingFile",
+        "enactedBy": {
+          "id": "sid-5D03787E-8BB1-4E32-8244-E2BADE47FA1A",
+          "name": "Printer",
+          "type": "Device"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "fileid"
+        ],
+        "flow": {
+          "id": "sid-AEF11FF6-494A-4D27-8B41-87C83D3154E6",
+          "to": "sid-66A5EA60-F670-4423-9429-E8BBF28A9F0D",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [],
+  "id": "5173",
+  "properties": {
+    "name": "#10 printing",
+    "documentation": ""
+  },
+  "gateway": []
+}

@@ -1,0 +1,318 @@
+{
+  "_id": "61a4f785c5a883de4105f130",
+  "action": {
+    "service": [
+      {
+        "id": "sid-E2B5949A-A57E-4524-9E14-12742357D942",
+        "name": "InitiateMeetings",
+        "enactedBy": {
+          "id": "sid-C92760B8-4F53-4F92-A9A4-A5566F880E0E",
+          "name": "MeetingServiceSystem",
+          "type": "CloudApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {},
+        "output": [
+          "time",
+          "location",
+          "peoplenum",
+          "fileurl"
+        ],
+        "flow": {
+          "id": "sid-253EE5FB-04D7-4426-B50D-7467335D3BAD",
+          "to": "sid-4B825DB9-0A0C-43B5-976F-9FC2EE3B910D",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-9FB4007A-2CA4-4F83-87D5-300F5697AF3C",
+        "name": "MakeOrder",
+        "enactedBy": {
+          "id": "sid-B2D72046-E1A2-4EE4-A403-5BE9B5FC8839",
+          "name": "Orders",
+          "type": "CloudApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {},
+        "output": [
+          "orderid",
+          "location",
+          "num"
+        ],
+        "flow": {
+          "id": "sid-5456021B-817D-40A8-B927-8E29395BD778",
+          "to": "sid-DF6A8FF8-19A8-4670-AA58-2BEBD620EAB2",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-DF6A8FF8-19A8-4670-AA58-2BEBD620EAB2",
+        "name": "MakeCoffee",
+        "enactedBy": {
+          "id": "sid-64B101FC-605E-4C05-BE06-8356EFD2C482",
+          "name": "CoffeeMaker",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {
+          "num": "peoplenum"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-8EBF7CF0-0A37-4498-9EB7-5CA8BD954C81",
+        "name": "GetItem",
+        "enactedBy": {
+          "id": "sid-54518DDB-022A-4B44-AE29-680BE26B7CBD",
+          "name": "worker",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-64B101FC-605E-4C05-BE06-8356EFD2C482",
+          "name": "CoffeeMaker",
+          "type": "Device"
+        },
+        "input": {
+          "item": "coffee"
+        },
+        "output": "",
+        "flow": {
+          "id": "sid-B27B75DD-8976-4600-8CB0-3F2466FC36A9",
+          "to": "sid-A2D08516-78E4-474D-9662-6DE005D35BA8",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-A2D08516-78E4-474D-9662-6DE005D35BA8",
+        "name": "DeliverItem",
+        "enactedBy": {
+          "id": "sid-54518DDB-022A-4B44-AE29-680BE26B7CBD",
+          "name": "worker",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-E6500427-0DD5-4CEF-A35E-6AB6D4EB6ABE",
+          "name": "MeetingRoom",
+          "type": "Room"
+        },
+        "input": {
+          "item": "coffee"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-7E03DAA1-8024-41BB-91F0-4E6297DCED17",
+        "name": "TurnOnAirCleaner",
+        "enactedBy": {
+          "id": "sid-DC931DB3-AE6F-4B0F-B876-5B7B2732FAFB",
+          "name": "AirCleaner",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-23367DD6-9345-4C1C-A0A6-DA460259776F",
+        "name": "TurnOnLight",
+        "enactedBy": {
+          "id": "sid-5FAEC65F-44AC-4CAF-9116-877970E274C4",
+          "name": "Light",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {},
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-1D5B9574-7C53-4836-A691-E2BAE3FD68DB",
+        "name": "TurnOnTV",
+        "enactedBy": {
+          "id": "sid-BE2211D5-BC37-40DA-A8E1-C82BD25795A0",
+          "name": "TV",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {
+          "videoUrl": "fileurl"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-4B825DB9-0A0C-43B5-976F-9FC2EE3B910D",
+        "name": "Notification",
+        "enactedBy": {
+          "id": "sid-AA930498-2460-49DF-8E2C-CD2B77B79889",
+          "name": "MeetingServiceSystem",
+          "type": "CloudApp"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "time",
+          "location",
+          "peoplenum",
+          "fileurl"
+        ],
+        "flow": {
+          "id": "sid-07BF2822-6557-46F5-90E0-8CB927407F6D",
+          "to": "sid-BEEA3C64-EABB-43D6-953B-41C005E4CD50",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-0F7C83AE-DC01-4584-ADD2-4857EBCABCF0",
+        "name": "FinishMakingCoffee",
+        "enactedBy": {
+          "id": "sid-64B101FC-605E-4C05-BE06-8356EFD2C482",
+          "name": "CoffeeMaker",
+          "type": "Device"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "coffeeid"
+        ],
+        "flow": {
+          "id": "sid-918A0759-FE0E-4C83-B7EC-71B2418B3A8F",
+          "to": "sid-8EBF7CF0-0A37-4498-9EB7-5CA8BD954C81",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [
+    {
+      "id": "sid-E6500427-0DD5-4CEF-A35E-6AB6D4EB6ABE",
+      "name": "MeetingRoom",
+      "type": "Room",
+      "entitySpecificProperties": {
+        "properties": {
+          "location": {
+            "bindDynamically": true,
+            "type": "data",
+            "data": "location",
+            "text": "",
+            "entity": "",
+            "rule": "LocatedIn"
+          },
+          "capacity": {
+            "bindDynamically": true,
+            "type": "data",
+            "data": "peoplenum",
+            "text": "",
+            "entity": "",
+            "rule": ">="
+          },
+          "state": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "",
+            "entity": "",
+            "rule": ""
+          }
+        }
+      }
+    }
+  ],
+  "id": "5180",
+  "properties": {
+    "name": "#11 Meeting Preparation I",
+    "documentation": ""
+  },
+  "gateway": [
+    {
+      "id": "sid-A9B11DF8-C8B7-421B-B562-C5D5B035C6F3",
+      "name": "ParallelGateway0",
+      "type": "fork",
+      "flow": {
+        "id": "",
+        "from": [],
+        "to": [
+          {
+            "id": "sid-7E03DAA1-8024-41BB-91F0-4E6297DCED17",
+            "condition": "true"
+          },
+          {
+            "id": "sid-23367DD6-9345-4C1C-A0A6-DA460259776F",
+            "condition": "true"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sid-855392B6-63DE-4B33-8B02-355FAD912059",
+      "name": "ParallelGateway0",
+      "type": "fork",
+      "flow": {
+        "id": "",
+        "from": [],
+        "to": [
+          {
+            "id": "",
+            "condition": "true"
+          },
+          {
+            "id": "sid-9FB4007A-2CA4-4F83-87D5-300F5697AF3C",
+            "condition": "true"
+          },
+          {
+            "id": "sid-1D5B9574-7C53-4836-A691-E2BAE3FD68DB",
+            "condition": "true"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sid-BEEA3C64-EABB-43D6-953B-41C005E4CD50",
+      "name": "ParallelGateway0",
+      "type": "fork",
+      "flow": {
+        "id": "",
+        "from": [],
+        "to": [
+          {
+            "id": "",
+            "condition": "true"
+          }
+        ]
+      }
+    }
+  ]
+}

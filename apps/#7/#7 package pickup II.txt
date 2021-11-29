@@ -1,0 +1,135 @@
+{
+  "_id": "61a4e407c5a883de4105f12a",
+  "action": {
+    "service": [
+      {
+        "id": "sid-7151ADE3-AA38-4FD0-B244-488FB52254D6",
+        "name": "MakeOrder",
+        "enactedBy": {
+          "id": "sid-14513158-3527-45D6-AF09-A1BC5A257403",
+          "name": "TaoBao",
+          "type": "MobileApp"
+        },
+        "type": "CyberAction",
+        "interaction": {},
+        "input": {
+          "userId": "123"
+        },
+        "output": [
+          "ProductList"
+        ],
+        "flow": {
+          "id": "sid-B8083545-0284-4BF8-B2D0-D68F6DBF76D6",
+          "to": "sid-FE29F7B2-8AAB-4E9C-A3CB-39CB0E509180",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-7028D270-C474-4C29-886A-06CEC17C7600",
+        "name": "GetItem",
+        "enactedBy": {
+          "id": "sid-6E7B24F1-B97D-46C2-81B8-4CAD3929BCEB",
+          "name": "worker",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-988EBED9-03A6-4DDF-95B4-9ECE4E168E66"
+        },
+        "input": {
+          "item": "package"
+        },
+        "output": "",
+        "flow": {
+          "id": "sid-CD04F72C-0B9F-48D4-8A61-787E81116072",
+          "to": "sid-E6C64C72-A0CC-4067-8E81-8BD51DDF50A2",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-E6C64C72-A0CC-4067-8E81-8BD51DDF50A2",
+        "name": "DeliverItem",
+        "enactedBy": {
+          "id": "sid-6E7B24F1-B97D-46C2-81B8-4CAD3929BCEB",
+          "name": "worker",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-3D7711D4-17AA-4136-A50A-C0BE7656D1FF"
+        },
+        "input": {
+          "item": "package"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-FE29F7B2-8AAB-4E9C-A3CB-39CB0E509180",
+        "name": "MsgReceived",
+        "enactedBy": {
+          "id": "sid-6D6250C6-AD4B-461D-A82B-E1DEADE4408A",
+          "name": "Message",
+          "type": "MobileApp"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "content"
+        ],
+        "flow": {
+          "id": "sid-80D6C1D0-A0D6-4A46-9E70-101CC3704462",
+          "to": "sid-7028D270-C474-4C29-886A-06CEC17C7600",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [
+    {
+      "id": "sid-988EBED9-03A6-4DDF-95B4-9ECE4E168E66",
+      "name": "Express Cabinets",
+      "type": "Room",
+      "entitySpecificProperties": {
+        "properties": {
+          "location": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "InterdisciplineBuilding2",
+            "entity": "",
+            "rule": ""
+          },
+          "capacity": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "",
+            "entity": "",
+            "rule": ""
+          },
+          "state": {
+            "bindDynamically": false,
+            "type": "entity",
+            "data": "",
+            "text": "",
+            "entity": "",
+            "rule": ""
+          }
+        }
+      }
+    }
+  ],
+  "id": "5134",
+  "properties": {
+    "name": "package pickup II",
+    "documentation": ""
+  },
+  "gateway": []
+}

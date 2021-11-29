@@ -1,0 +1,128 @@
+{
+  "_id": "61a4fabfc5a883de4105f132",
+  "action": {
+    "service": [
+      {
+        "id": "sid-77D63811-FA9F-406F-8085-3E3577B177A3",
+        "name": "MakeCoffee",
+        "enactedBy": {
+          "id": "sid-26D82750-7888-4DA2-92CF-4D8BA1AF6BF9",
+          "name": "CoffeeMaker",
+          "type": "Device"
+        },
+        "type": "PhysicalAction",
+        "interaction": {},
+        "input": {
+          "mode": "Selectmode",
+          "level": "Selectlevel",
+          "num": "Selectnum",
+          "action": "Selectaction"
+        },
+        "output": [],
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-FD17B036-B6EF-4CD8-8FB3-EA737F3D7293",
+        "name": "GetItem",
+        "enactedBy": {
+          "id": "sid-8A331C67-60F1-40B9-BCA4-559BAB1AEF9D",
+          "name": "w1",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-26D82750-7888-4DA2-92CF-4D8BA1AF6BF9",
+          "name": "CoffeeMaker",
+          "type": "Device"
+        },
+        "input": {
+          "item": "coffee"
+        },
+        "output": "",
+        "flow": {
+          "id": "sid-D9F82354-DB1F-4383-9B9B-AAB8C4DC1E08",
+          "to": "sid-29407E92-692F-4212-8975-4E61383E4DBA",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-29407E92-692F-4212-8975-4E61383E4DBA",
+        "name": "DeliverItem",
+        "enactedBy": {
+          "id": "sid-8A331C67-60F1-40B9-BCA4-559BAB1AEF9D",
+          "name": "w1",
+          "type": "Worker"
+        },
+        "type": "SocialAction",
+        "interaction": {
+          "id": "sid-10AACF27-75F2-410F-85D2-3724BE452A32",
+          "name": "MeetingRoom",
+          "type": "Room"
+        },
+        "input": {
+          "item": "coffee"
+        },
+        "output": "",
+        "flow": {
+          "id": "",
+          "to": "",
+          "condition": ""
+        }
+      }
+    ],
+    "event": [
+      {
+        "id": "sid-AA8F01D2-654A-4540-8C80-50546B013CFB",
+        "name": "Notification",
+        "enactedBy": {
+          "id": "sid-4C0E302D-AA1B-40EC-BECD-90023BACDFE6",
+          "name": "MeetingServiceSystem",
+          "type": "CloudApp"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "time",
+          "location",
+          "peoplenum",
+          "fileurl"
+        ],
+        "flow": {
+          "id": "sid-511BDC18-3B0F-48F7-849A-B05FFD336010",
+          "to": "sid-77D63811-FA9F-406F-8085-3E3577B177A3",
+          "condition": ""
+        }
+      },
+      {
+        "id": "sid-14BBAC70-91B9-475D-988B-535F1408D3CA",
+        "name": "FinishMakingCoffee",
+        "enactedBy": {
+          "id": "sid-26D82750-7888-4DA2-92CF-4D8BA1AF6BF9",
+          "name": "CoffeeMaker",
+          "type": "Device"
+        },
+        "type": "DefaultEvent",
+        "input": "",
+        "output": [
+          "coffeeid"
+        ],
+        "flow": {
+          "id": "sid-FC9A5F7E-AE66-4F3D-B75E-8B012D730823",
+          "to": "sid-FD17B036-B6EF-4CD8-8FB3-EA737F3D7293",
+          "condition": ""
+        }
+      }
+    ]
+  },
+  "constraint": [],
+  "id": "7520",
+  "properties": {
+    "name": "#13 Meeting Preparation II",
+    "documentation": ""
+  },
+  "gateway": []
+}
